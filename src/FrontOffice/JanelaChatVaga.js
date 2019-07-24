@@ -70,7 +70,7 @@ class JanelaChatVaga extends Component{
                 watsonResponse = watsonResponse.replace("{"+apiRequests[i]+"}", strAux);
             }
             else if(responseArray.length === 4){
-                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com${responseArray[i]}${this.props.id+1}`);
+                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com${responseArray[i]}${this.props.id}`);
 
                 let valueAttribute = apiResponse.data[0][responseArray[1]];
                 
@@ -79,7 +79,7 @@ class JanelaChatVaga extends Component{
                 watsonResponse = watsonResponse.replace("{"+apiRequests[i]+"}", strAux);
             }
             else if(responseArray.length > 4){
-                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com${responseArray[i]}${this.props.id+1}`);
+                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com${responseArray[i]}${this.props.id}`);
 
                 let valueAttribute = apiResponse.data[0][responseArray[1]];
                 
