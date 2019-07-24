@@ -28,11 +28,7 @@ class ListaVagas extends Component{
     }
     async componentDidMount(){
         let APIURL = "https://asaf-enterprise-chatbot-api.herokuapp.com/api/jobs/";
-        let response = await axios.get(APIURL).then((result) => {
-            this.setState({
-                isLoadingVagas: false
-            });
-        });
+        let response = await axios.get(APIURL);
         let auxArray = [...this.state.vagas];
 
         let areasSet = [];
@@ -72,7 +68,8 @@ class ListaVagas extends Component{
         this.setState({
             vagas: auxArray,
             areas: areasAux,
-            localizacoes: localizacoesAux
+            localizacoes: localizacoesAux,
+            isLoadingVagas: false
         });
     }
     stringToArray(str){
