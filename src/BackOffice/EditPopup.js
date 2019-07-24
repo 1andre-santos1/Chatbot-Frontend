@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './EditPopup.css'
 
 class EditPopup extends Component{
     constructor(props){
@@ -12,8 +13,9 @@ class EditPopup extends Component{
         this.handleTextAreaChange = this.handleTextAreaChange.bind(this);
     }
     componentDidMount(){
+        let vaga = {...this.state.inputVaga};
         this.setState({
-            inputVaga: this.props.vaga
+            inputVaga: vaga
         });
     }
     handleCancelarEdicao(){
@@ -51,31 +53,39 @@ class EditPopup extends Component{
     render(){
         return(
             <div className="EditPopup">
-                <h2>Edição de Vaga</h2>
-                <span>Nome:</span>
-                <textarea type="text" value={this.state.inputVaga.name} placeholder={this.props.vaga.area} name="area" onChange={this.handleTextAreaChange}></textarea>
+                <div className="EditPopup-Container">
+                    <h2 className="EditPopup-Title">Edição de Vaga</h2>
+                    <span className="EditPopup-Attribute">Nome:</span>
+                    <textarea className="EditPopup-TextArea EditPopup-TextArea-Name" type="text" value={this.state.inputVaga.name} placeholder={this.props.vaga.area} name="area" onChange={this.handleTextAreaChange}></textarea>
 
-                <span>Descrição de Candidato:</span>
-                <textarea type="text" value={this.state.inputVaga.candidateDescript} placeholder={this.props.vaga.descricao} name="descricao" onChange={this.handleTextAreaChange}></textarea>
+                    <span className="EditPopup-Attribute">Descrição de Candidato:</span>
+                    <textarea className="EditPopup-TextArea" type="text" value={this.state.inputVaga.candidateDescript} placeholder={this.props.vaga.descricao} name="descricao" onChange={this.handleTextAreaChange}></textarea>
 
-                <span>Trabalho Remoto:</span>
-                <span>Sim</span><input type="radio" name="remote" checked={this.state.inputVaga.remote} onClick={this.handleRadioChange}></input>
-                <span>Não</span><input type="radio" name="remote" checked={!this.state.inputVaga.remote} onClick={this.handleRadioChange}></input>
-               
-                <span>Formação:</span>
-                <span>Sim</span><input type="radio" name="formation" checked={this.state.inputVaga.formation} onClick={this.handleRadioChange}></input>
-                <span>Não</span><input type="radio" name="formation" checked={!this.state.inputVaga.formation} onClick={this.handleRadioChange}></input>
-                
-                <span>Viagens para fora:</span>
-                <span>Sim</span><input type="radio" name="travelOtCountrys" checked={this.state.inputVaga.travelOtCountrys} onClick={this.handleRadioChange}></input>
-                <span>Não</span><input type="radio" name="travelOtCountrys" checked={!this.state.inputVaga.travelOtCountrys} onClick={this.handleRadioChange}></input>
-               
-                <span>Turnos:</span>
-                <span>Sim</span><input type="radio" name="shifts" checked={this.state.inputVaga.shifts} onClick={this.handleRadioChange}></input>
-                <span>Não</span><input type="radio" name="shifts" checked={!this.state.inputVaga.shifts} onClick={this.handleRadioChange}></input>
+                    <span className="EditPopup-Attribute">Trabalho Remoto:</span>
+                    <div className="EditPopup-Container-Radios">
+                        <span>Sim</span><input type="radio" name="remote" checked={this.state.inputVaga.remote} onClick={this.handleRadioChange}></input>
+                        <span>Não</span><input type="radio" name="remote" checked={!this.state.inputVaga.remote} onClick={this.handleRadioChange}></input>
+                    </div>
+                   
+                    <span className="EditPopup-Attribute">Formação:</span>
+                    <div className="EditPopup-Container-Radios">
+                        <span>Sim</span><input type="radio" name="formation" checked={this.state.inputVaga.formation} onClick={this.handleRadioChange}></input>
+                        <span>Não</span><input type="radio" name="formation" checked={!this.state.inputVaga.formation} onClick={this.handleRadioChange}></input>
+                    </div>
 
-                <button onClick={this.handleConfirmarEdicao}>Confirmar</button>
-                <button onClick={this.handleCancelarEdicao}>Cancelar</button>
+                    <span className="EditPopup-Attribute">Viagens para fora:</span>
+                    <div className="EditPopup-Container-Radios">
+                        <span>Sim</span><input type="radio" name="travelOtCountrys" checked={this.state.inputVaga.travelOtCountrys} onClick={this.handleRadioChange}></input>
+                        <span>Não</span><input type="radio" name="travelOtCountrys" checked={!this.state.inputVaga.travelOtCountrys} onClick={this.handleRadioChange}></input>
+                    </div>
+                    <span className="EditPopup-Attribute">Turnos:</span>
+                    <div className="EditPopup-Container-Radios">
+                        <span>Sim</span><input type="radio" name="shifts" checked={this.state.inputVaga.shifts} onClick={this.handleRadioChange}></input>
+                        <span>Não</span><input type="radio" name="shifts" checked={!this.state.inputVaga.shifts} onClick={this.handleRadioChange}></input>
+                    </div>          
+                    <button className="EditPopup-Btn-Confirm" onClick={this.handleConfirmarEdicao}>Confirmar</button>
+                    <button className="EditPopup-Btn-Cancel" onClick={this.handleCancelarEdicao}>Cancelar</button>
+                </div>
             </div>
         );
     }
