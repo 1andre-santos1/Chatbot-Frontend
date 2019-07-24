@@ -125,7 +125,7 @@ class ListaVagas extends Component{
                                         localizacao={v.localizacao}
                                         descricao={this.stringToArray(v.descricao)}
                                         data={v.data}
-                                        
+                                        id={v.id}
                                     />
                                 );
                             },this)
