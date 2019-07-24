@@ -41,7 +41,8 @@ class ListaVagas extends Component{
                 area: curVaga.name,
                 localizacao: responseLocalizacao.data[0].name,
                 descricao: curVaga.candidateDescript,
-                data: curVaga.createdAt.substring(0,curVaga.createdAt.indexOf('T'))
+                data: curVaga.createdAt.substring(0,curVaga.createdAt.indexOf('T')),
+                id: curVaga.id
             };
 
             let responseMainArea = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com/api/areas/${curVaga.area}`);
@@ -124,7 +125,7 @@ class ListaVagas extends Component{
                                         localizacao={v.localizacao}
                                         descricao={this.stringToArray(v.descricao)}
                                         data={v.data}
-                                        id={index}
+                                        
                                     />
                                 );
                             },this)
