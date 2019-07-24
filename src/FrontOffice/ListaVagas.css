@@ -281,3 +281,38 @@
     height: 50px;
     margin-top: 20px;
 }
+.ListaVagas-LoadingText{
+    position: absolute;
+    left: 23%;
+    margin-top: 100px;
+    text-align: center;
+    color: #28b3c9;
+    font-size: 140%;
+    -webkit-animation: text-focus-in 1s linear infinite alternate-reverse both;
+	        animation: text-focus-in 1s linear infinite alternate-reverse both;
+}
+@-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(1px);
+              filter: blur(1px);
+      opacity: 0.8;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(1px);
+              filter: blur(1px);
+      opacity: 0.8;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  

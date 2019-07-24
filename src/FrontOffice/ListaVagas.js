@@ -117,7 +117,10 @@ class ListaVagas extends Component{
                     {
                         this.state.isLoadingVagas 
                         ?
-                        <Spinner animation="border" variant="info" className="ListaVagas-Spinner" />
+                        <div>
+                            <Spinner animation="border" variant="info" className="ListaVagas-Spinner" />
+                            <span className="ListaVagas-LoadingText">Estamos a carregar as vagas existentes... Por favor aguarde.</span>
+                        </div>
                         :
                         <Accordion>
                         {
