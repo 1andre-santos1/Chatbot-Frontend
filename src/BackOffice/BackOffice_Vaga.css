@@ -1,0 +1,13 @@
+.BackOffice_Vaga{
+    background-color: #3c3c44;
+    margin-bottom: 20px;
+}
+
+.BackOffice_Vaga-Area,.BackOffice_Vaga-Data,.BackOffice_Vaga-Localizacao,.BackOffice_Vaga-Descricao-Item{
+    color:white;
+    display: block;
+}
+.BackOffice_Vaga-Localizacao > img{
+    width: 20px;
+    margin-right: 10px;
+}

@@ -1,0 +1,275 @@
+.PageBanner{
+    width: 100%;
+    text-align: center;
+    background-color: #727F8C;
+
+    
+}
+.PageBanner > img{
+    position: absolute;
+    left: 0;
+    min-width: 100%;
+    height: 15rem;
+    filter: brightness(60%);
+    object-fit: cover;
+}
+.PageBanner > h3{
+    position: absolute;
+    left: 0;
+    min-width: 100%;
+    margin-top: 10rem;
+    color: white;
+    font-size: 300%;
+    text-shadow: 2px 2px 4px #000000;
+}
+#LinkAdminVagas{
+    position: absolute;
+    top:22rem;
+    left: 8rem;
+    z-index: 100;
+    padding-bottom:8px;
+    color: white;
+}
+#LinkAdminVagas:hover{
+    border-bottom:1px solid #17a2b8;
+    padding-bottom:7px;
+}
+#DropdownMenuContainer{
+    position: absolute;
+    width: 80%;
+    text-align: right;
+    top:20rem;
+    margin-top: 20px;
+}
+#DropdownMenuContainer > div {
+    width: 8%;
+    margin: 10px;
+}
+.btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle),.btn-group>.btn-group:not(:first-child)>.btn, .btn-group>.btn:not(:first-child){
+    background-color: #292E33;
+    border-color: #17a2b8;
+}
+#VagasContainer{
+    position: absolute;
+    width: 73%;
+    text-align: left;
+    top:25rem;
+    margin-top: 20px;
+    margin-left: 10%;
+    animation-name: TalkAnimation;
+    -webkit-animation-name: TalkAnimation;
+
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+
+     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.TextoPrincipal_Area{
+    font-size: 25px;
+    display: block;
+    color: white;
+}
+.TextoPrincipal_Localizacao{
+    font-size: 18px;
+    display: block;
+    color: #dddddd;
+}
+.TextoPrincipal_Localizacao > img{
+    width: 20px;
+    margin-right: 10px;
+}
+
+#VagasContainer > hr{
+    border-color: #17a2b8;
+    width: 100%;
+    margin-right: 0;
+}
+#VagaPopup{
+    position: absolute;
+}
+
+#chatbotIcon{
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    left: 90%;
+    top: 90%;
+    cursor: pointer;
+    background-color: #17A2B8;
+    border-radius: 50%;
+}
+#chatbotIcon > img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+}
+
+.VagaChatbot{
+    text-align: right;
+    width:97%;
+    position: absolute;
+    top:60%;
+}
+
+.robotIcon{
+    width: 120px;
+    height: 120px;
+    margin-left: 85%;
+    cursor: pointer;
+    background-image:url("../images/RobotIcon01.png");
+    background-size: cover;
+    
+    
+}
+
+.robotIcon-ActivateChat{
+    animation-name: RobotAnimation;
+    -webkit-animation-name: RobotAnimation;
+
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+
+     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+.robotIcon-DeactivateChat{
+    animation-name: RobotAnimation;
+    -webkit-animation-name: RobotAnimation;
+
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+
+     animation-fill-mode: backwards;
+    -webkit-animation-fill-mode: backwards;
+}
+
+@keyframes RobotAnimation{
+    0%{
+        background-image:url("../images/RobotIcon01.png");
+    }
+
+    100%{
+        background-image:url("../images/RobotIcon02.png");
+    }
+}
+@-webkit-keyframes RobotAnimation{
+    0%{
+        background-image:url("../images/RobotIcon01.png");
+    }
+    100%{
+        background-image:url("../images/RobotIcon02.png");
+    }
+}
+
+.VagaChatbotQuestion{
+    background-color: #3c3c44;
+    border:1px solid #17a2b8;
+    color: #28b3c9;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 80%;
+    width: 20%;
+    text-align: center;
+    margin-left: 70%;
+    position: absolute;
+    top:50%;
+
+    animation-name: TalkAnimation;
+    -webkit-animation-name: TalkAnimation;
+
+    animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+
+     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes TalkAnimation{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+@-webkit-keyframes TalkAnimation{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+.rotate-center{
+    -webkit-animation: rotate-center 0.7s ease-out alternate forwards;
+	        animation: rotate-center 0.7s ease-out alternate forwards;
+}
+.rotate-in-center {
+	-webkit-animation: rotate-in-center 0.7s ease-out alternate forwards;
+	        animation: rotate-in-center 0.7s ease-out alternate forwards;
+}
+@-webkit-keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+        opacity: 0;
+      }
+      100% {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+        opacity: 1;
+      }
+  }
+  @keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+        opacity: 0;
+      }
+      100% {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+        opacity: 1;
+      }
+  }
+  @-webkit-keyframes rotate-in-center {
+    0% {
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+      opacity: 1;
+    }
+  }
+  @keyframes rotate-in-center {
+    0% {
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+      opacity: 1;
+    }
+  }

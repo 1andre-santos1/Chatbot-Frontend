@@ -1,0 +1,50 @@
+.card{
+    margin-bottom: 20px;
+    background-color: #3c3c44;
+}
+
+.card-header{
+    cursor: pointer;
+}
+
+.card-body > span{
+    color: white;
+    font-size: 16px;
+}
+.card-body > ul > li{
+    color: white;
+    font-size: 14px;
+}
+
+.card-body{
+    min-height: 220px;
+    animation-name: TalkAnimation;
+    -webkit-animation-name: TalkAnimation;
+
+    animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+
+     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes RobotAnimation{
+    0%{
+        background-image:url("../images/RobotIcon01.png");
+    }
+
+    100%{
+        background-image:url("../images/RobotIcon02.png");
+    }
+}
+@-webkit-keyframes RobotAnimation{
+    0%{
+        background-image:url("../images/RobotIcon01.png");
+    }
+    100%{
+        background-image:url("../images/RobotIcon02.png");
+    }
+}

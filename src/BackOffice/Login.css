@@ -1,0 +1,48 @@
+#LoginContainer{
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.LoginLabel, .LoginInput,.LoginButton{
+    display: block;
+    margin:0 auto;
+}
+
+#LoginContainer > h3 {
+    color: white;
+    border-bottom:1px solid #17a2b8;
+    font-size: 200%;
+    width: 20%;
+    margin:15px auto;
+    padding: 5px;
+}
+.LoginLabel{
+    color: white;
+    font-size: 150%;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+.LoginInput{
+    margin-bottom: 30px;
+    text-align: center;
+    height: 2.3rem;
+    border-radius: 4px;
+}
+.LoginButton,.LoginInput{
+    width: 20%;
+}
+.LoginButton{
+    padding: 5px 0;
+    background-color: rgba(0, 0, 0, 0);
+    color: #17a2b8;
+    border: 1px solid #17a2b8;
+    -webkit-transition: color 0.1s, background-color 0.4s;
+    transition: color 0.1s, background-color 0.4s;
+    border-radius: 5px;
+    font-size: 1.3rem;
+}
+.LoginButton:hover{
+    background-color: #17a2b8;
+    color:white;
+}

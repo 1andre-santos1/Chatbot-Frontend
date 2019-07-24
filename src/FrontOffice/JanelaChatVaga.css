@@ -1,0 +1,150 @@
+.JanelaChatVaga{
+    position: absolute;
+    width: 30%;
+    height: 280px;
+    left: 55%;
+    top: 5%;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+.JanelaChatVaga-Banner-Title, .JanelaChatVaga-Banner-Close{
+    display: inline-block;
+}
+.JanelaChatVaga-Banner-Title{
+    float: left;
+}
+.JanelaChatVaga-Banner-Close{
+    float: right;
+}
+
+.JanelaChatVaga-Banner, .JanelaChatVaga-Dialog, .JanelaChatVaga-Form{
+    display: block;
+}
+
+.JanelaChatVaga-Node-Chatbot, .JanelaChatVaga-Node-User{
+    display: block;
+}
+
+.JanelaChatVaga-Banner{
+    height: 40px;
+    width: 100%;
+    background-color: #17A2B8;
+    padding: 10px 15px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color:white;
+    font-size: 90%;
+}
+
+.JanelaChatVaga-Node-Chatbot,.JanelaChatVaga-Node-User{
+    display: block;
+    margin: 10px;
+    padding:10px;
+    border-radius: 20px;
+    max-width:80%;
+    font-size: 14px;
+}
+.JanelaChatVaga-Dialog{
+    overflow: scroll;
+    height: 72%;
+    overflow-x: auto;
+    border-bottom: 1px solid #cccccc;
+}
+.JanelaChatVaga-Node-Chatbot{
+    background-color: #F1F0F0;
+    color: black;
+    float: left;
+}
+.JanelaChatVaga-Node-User{
+    background-color: #0084FF;
+    color: white;
+    float: right;
+}
+
+.JanelaChatVaga-Form{
+    margin-top: 3%;
+    padding: 0px 12px; 
+    font-size: 12px;
+}
+.JanelaChatVaga-Form-Input{
+    width: 100%;
+    margin: 0;
+    max-height: 200px;
+    border: none;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.scale-up-center {
+	-webkit-animation: scale-up-center 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-center 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+.slide-in-blurred-bottom {
+	-webkit-animation: slide-in-blurred-bottom 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	        animation: slide-in-blurred-bottom 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+@-webkit-keyframes slide-in-blurred-bottom {
+    0% {
+      -webkit-transform: translateY(100px) scaleY(1.2) scaleX(0.2);
+              transform: translateY(100px) scaleY(1.2) scaleX(0.2);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+              transform: translateY(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-blurred-bottom {
+    0% {
+      -webkit-transform: translateY(100px) scaleY(1.2) scaleX(0.2);
+              transform: translateY(100px) scaleY(1.2) scaleX(0.2);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+              transform: translateY(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+ 

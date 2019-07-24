@@ -1,0 +1,49 @@
+a{
+   color: #0691a7;
+   margin:5px 20px;
+   font-size: 20px;
+   
+}
+.NavbarLink{
+    animation-name: AppearAnimation;
+    -webkit-animation-name: AppearAnimation;
+ 
+    animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+ 
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+ 
+     animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes AppearAnimation{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+@-webkit-keyframes AppearAnimation{
+    0%{
+        opacity: 0;
+
+    }
+
+    100%{
+        opacity: 1;
+
+    }
+}
+a:hover{
+    color: white;
+    text-decoration: none;
+}
+.navbar-brand{
+    font-size: 25px;
+    padding-right: 30px;
+    border-right: 1px solid white;
+}
+
