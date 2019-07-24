@@ -4,6 +4,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
 import Accordion from 'react-bootstrap/Accordion'
+import Spinner from 'react-bootstrap/Spinner'
 import Card from 'react-bootstrap/Card'
 import Vaga from './Vaga'
 import axios from 'axios'
@@ -116,7 +117,7 @@ class ListaVagas extends Component{
                     {
                         this.state.isLoadingVagas 
                         ?
-                        <h1>Loading Vagas</h1>
+                        <Spinner animation="border" variant="info" className="ListaVagas-Spinner" />
                         :
                         <Accordion>
                         {

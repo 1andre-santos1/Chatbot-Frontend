@@ -273,3 +273,8 @@
       opacity: 1;
     }
   }
+
+.ListaVagas-Spinner{
+    position: absolute;
+    left:50%;
+}
