@@ -20,14 +20,19 @@ class ListaVagas extends Component{
             areas: [],
             localizacoes: [],
             areaFiltered: 'Tudo',
-            localFiltered: 'Tudo'
+            localFiltered: 'Tudo',
+            isLoadingVagas: true
         }
         this.handleShowChatGeral = this.handleShowChatGeral.bind(this);
         this.filterJobs = this.filterJobs.bind(this);
     }
     async componentDidMount(){
         let APIURL = "https://asaf-enterprise-chatbot-api.herokuapp.com/api/jobs/";
-        let response = await axios.get(APIURL);
+        let response = await axios.get(APIURL).then((result) => {
+            this.setState({
+                isLoadingVagas: false
+            });
+        });
         let auxArray = [...this.state.vagas];
 
         let areasSet = [];
@@ -111,7 +116,12 @@ class ListaVagas extends Component{
                 </div>
                 <div id="VagasContainer">
                     <hr />
-                    <Accordion>
+                    {
+                        this.state.isLoadingVagas 
+                        ?
+                        <h1>Loading Vagas</h1>
+                        :
+                        <Accordion>
                         {
                             this.state.vagas.map(function(v,index){
                                 return( 
@@ -131,6 +141,7 @@ class ListaVagas extends Component{
                             },this)
                         }
                     </Accordion>
+                    }
                 </div>
                 <div onClick={this.handleShowChatGeral} id="chatbotIcon">
                     {(this.state.isShowingChatGeral) ?  
