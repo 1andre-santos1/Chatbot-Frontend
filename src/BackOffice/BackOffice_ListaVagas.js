@@ -237,7 +237,10 @@ class VagasIndex extends Component {
                 {
                     this.state.isLoadingVagas 
                     ?
-                    <Spinner animation="border" variant="info" className="BackOffice_ListaVagas-Spinner" />
+                    <div>
+                        <Spinner animation="border" variant="info" className="BackOffice_ListaVagas-Spinner" />
+                        <span className="BackOffice_ListaVagas-LoadingText">Estamos a carregar as vagas existentes... Por favor aguarde.</span>
+                    </div>
                     :
                     <div className="BackOffice_ListaVagas-Container">
                         {this.state.vagas.map(v =>
