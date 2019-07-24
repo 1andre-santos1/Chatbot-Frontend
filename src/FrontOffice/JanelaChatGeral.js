@@ -79,7 +79,7 @@ class JanelaChatGeral extends Component{
                 }
 
                 //pedido a localhost:8000/api/jobs/:idLocal/:idArea
-                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com/${apiRequests[i]}`);
+                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com${apiRequests[i]}`);
 
                 let values = [];
                 for(let j = 0; j < apiResponse.data.length; j++){
@@ -100,12 +100,12 @@ class JanelaChatGeral extends Component{
             {
                 apiRequests[i] = apiRequests[i].replace(",count","");
 
-                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com/${apiRequests[i]}`);
+                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com${apiRequests[i]}`);
 
                 watsonResponse = watsonResponse.replace("{"+apiRequests[i]+",count}",apiResponse.data.length);
             }
             else{
-                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com/${apiRequests[i]}`);
+                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com${apiRequests[i]}`);
 
 
                 let values = [];
