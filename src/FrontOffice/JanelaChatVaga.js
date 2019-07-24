@@ -54,7 +54,7 @@ class JanelaChatVaga extends Component{
 
             //se estiver a ser pedido apenas o name da vaga
             if(responseArray.length === 1){
-                let apiResponse = await axios.get(`hhttps://asaf-enterprise-chatbot-api.herokuapp.com/${responseArray[i]}//${this.props.id}`);
+                let apiResponse = await axios.get(`hhttps://asaf-enterprise-chatbot-api.herokuapp.com${responseArray[i]}//${this.props.id}`);
                 let values = [];
                 for(let j = 0; j < apiResponse.data.length; j++){
                     values.push(apiResponse.data[j].name);
@@ -70,7 +70,7 @@ class JanelaChatVaga extends Component{
                 watsonResponse = watsonResponse.replace("{"+apiRequests[i]+"}", strAux);
             }
             else if(responseArray.length === 4){
-                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com/${responseArray[i]}${this.props.id+1}`);
+                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com${responseArray[i]}${this.props.id+1}`);
 
                 let valueAttribute = apiResponse.data[0][responseArray[1]];
                 
@@ -79,7 +79,7 @@ class JanelaChatVaga extends Component{
                 watsonResponse = watsonResponse.replace("{"+apiRequests[i]+"}", strAux);
             }
             else if(responseArray.length > 4){
-                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com/${responseArray[i]}${this.props.id+1}`);
+                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com${responseArray[i]}${this.props.id+1}`);
 
                 let valueAttribute = apiResponse.data[0][responseArray[1]];
                 
