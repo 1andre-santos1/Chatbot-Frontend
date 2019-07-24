@@ -1,6 +1,11 @@
 .BackOffice_Vaga{
-    background-color: #3c3c44;
+    background-color: #3C3C44;
     margin-bottom: 20px;
+    width: 70%;
+    margin-left: 80px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #17a2b8;
 }
 
 .BackOffice_Vaga-Area,.BackOffice_Vaga-Data,.BackOffice_Vaga-Localizacao,.BackOffice_Vaga-Descricao-Item{
@@ -10,4 +15,52 @@
 .BackOffice_Vaga-Localizacao > img{
     width: 20px;
     margin-right: 10px;
+}
+
+.BackOffice_Vaga-Area{
+    font-size: 150%;
+}
+.BackOffice_Vaga-Localizacao{
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.BackOffice_Vaga-BtnEditar,.BackOffice_Vaga-BtnRemover{
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 100%;
+    transition: 0.7s;
+    margin: 20px;
+    width: 20%;
+    height: 50px;
+}
+.BackOffice_Vaga-Descricao-Item{
+    margin: 5px;
+    padding: 10px;
+    background-color: #363640;
+    border-radius: 10px;
+}
+.BackOffice_Vaga-BtnEditar{
+    background-color: #2B2B33;
+    margin-left: 25%;
+}
+.BackOffice_Vaga-BtnEditar:hover{
+    background-color: #1A1A22;
+}
+.BackOffice_Vaga-BtnRemover{
+    background-color: #DC3545;
+}
+.BackOffice_Vaga-BtnRemover:hover{
+    background-color: #ba1323;
+}
+.BackOffice_Vaga-DataText{
+    color: white;
+    font-size: 100%;
+    display: inline;
+}
+.BackOffice_Vaga-Data{
+    color: white;
+    font-size: 130%;
+    display: inline;
 }

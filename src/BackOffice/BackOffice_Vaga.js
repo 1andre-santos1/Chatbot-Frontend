@@ -27,6 +27,7 @@ class BackOffice_Vaga extends Component{
                 <ul className="BackOffice_Vaga-Descricao">
                     {this.props.descricao.map(d => <li className="BackOffice_Vaga-Descricao-Item">{d}</li>)}
                 </ul>
+                <span className="BackOffice_Vaga-DataText">Adicionada a </span>
                 <span className="BackOffice_Vaga-Data">{this.props.data}</span>
                 <button className="BackOffice_Vaga-BtnEditar" onClick={this.handleEdit}>Editar</button>
                 <button className="BackOffice_Vaga-BtnRemover" onClick={this.handleRemove}>Remover</button>
