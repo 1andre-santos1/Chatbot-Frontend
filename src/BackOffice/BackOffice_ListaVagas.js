@@ -118,7 +118,7 @@ class VagasIndex extends Component {
     cancelarEdicaoVaga(){
         this.setState({
             vagaToEdit: {},
-            isShowingEditPopup: false
+            isShowingAddPopup: false
         });
     }
     async removerVagaConfirmed(uuid) {

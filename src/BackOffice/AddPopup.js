@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './AddPopup.css'
 
 class AddPopup extends Component{
     constructor(props){
@@ -47,38 +48,44 @@ class AddPopup extends Component{
     render(){
         return(
             <div className="AddPopup">
-                <h2>Adicionar Vaga</h2>
+                <div className="AddPopup-Container">
+                    <h2 className="AddPopup-Title">Adicionar Vaga</h2>
 
-                <span>Área:</span>
-                <textarea type="text" value={this.state.vagaAdicionar.area} placeholder="Área da vaga..." name="area" onChange={this.handleTextAreaChange}></textarea>
+                    <span className="AddPopup-Attribute">Área:</span>
+                    <span className="AddPopup-Attribute">Tipo:</span>
+                    <span className="AddPopup-Attribute">Localização:</span>
+                    <div className="AddPopup-Container-Attributes">
+                        <textarea type="text" value={this.state.vagaAdicionar.area} placeholder="Infraestrutura..." name="area" onChange={this.handleTextAreaChange}></textarea>
+                        <textarea type="text" value={this.state.vagaAdicionar.name} placeholder=".NET Developer..." name="name" onChange={this.handleTextAreaChange}></textarea>
+                        <textarea type="text" value={this.state.vagaAdicionar.location} placeholder="Tomar..." name="location" onChange={this.handleTextAreaChange}></textarea>
+                    </div>
+                   
+                    <div className="AddPopup-Container-Desc">
+                    <span className="AddPopup-Attribute-Desc">Descrição de Candidato:</span>
+                     <textarea className="AddPopup-Textarea-Desc" type="text" value={this.state.vagaAdicionar.candidateDescript} placeholder="Descrições do candidato separadas por ;" name="candidateDescript" onChange={this.handleTextAreaChange}></textarea>
+                    </div>
+                    
+                    
 
-                <span>Tipo:</span>
-                <textarea type="text" value={this.state.vagaAdicionar.name} placeholder="Tipo de vaga..." name="name" onChange={this.handleTextAreaChange}></textarea>
+                        <span className="AddPopup-Attribute-Remote">Trabalho Remoto:</span>
+                        <span>Sim</span><input type="radio" name="remote" checked={this.state.vagaAdicionar.remote} onClick={this.handleRadioChange}></input>
+                        <span>Não</span><input type="radio" name="remote" checked={!this.state.vagaAdicionar.remote} onClick={this.handleRadioChange}></input>
+                    
+                    <span className="AddPopup-Attribute-Formation">Formação:</span>
+                    <span>Sim</span><input type="radio" name="formation" checked={this.state.vagaAdicionar.formation} onClick={this.handleRadioChange}></input>
+                    <span>Não</span><input type="radio" name="formation" checked={!this.state.vagaAdicionar.formation} onClick={this.handleRadioChange}></input>
 
-                <span>Descrição de Candidato:</span>
-                <textarea type="text" value={this.state.vagaAdicionar.candidateDescript} placeholder="Descrição do candidato" name="candidateDescript" onChange={this.handleTextAreaChange}></textarea>
+                    <span className="AddPopup-Attribute-Travel">Viagens para fora:</span>
+                    <span>Sim</span><input type="radio" name="travelOtCountrys" checked={this.state.vagaAdicionar.travelOtCountrys} onClick={this.handleRadioChange}></input>
+                    <span>Não</span><input type="radio" name="travelOtCountrys" checked={!this.state.vagaAdicionar.travelOtCountrys} onClick={this.handleRadioChange}></input>
 
-                <span>Localização:</span>
-                <textarea type="text" value={this.state.vagaAdicionar.location} placeholder="Localização" name="location" onChange={this.handleTextAreaChange}></textarea>
+                    <span className="AddPopup-Attribute-Shifts">Turnos:</span>
+                    <span>Sim</span><input type="radio" name="shifts" checked={this.state.vagaAdicionar.shifts} onClick={this.handleRadioChange}></input>
+                    <span>Não</span><input type="radio" name="shifts" checked={!this.state.vagaAdicionar.shifts} onClick={this.handleRadioChange}></input>
 
-                <span>Trabalho Remoto:</span>
-                <span>Sim</span><input type="radio" name="remote" checked={this.state.vagaAdicionar.remote} onClick={this.handleRadioChange}></input>
-                <span>Não</span><input type="radio" name="remote" checked={!this.state.vagaAdicionar.remote} onClick={this.handleRadioChange}></input>
-               
-                <span>Formação:</span>
-                <span>Sim</span><input type="radio" name="formation" checked={this.state.vagaAdicionar.formation} onClick={this.handleRadioChange}></input>
-                <span>Não</span><input type="radio" name="formation" checked={!this.state.vagaAdicionar.formation} onClick={this.handleRadioChange}></input>
-                
-                <span>Viagens para fora:</span>
-                <span>Sim</span><input type="radio" name="travelOtCountrys" checked={this.state.vagaAdicionar.travelOtCountrys} onClick={this.handleRadioChange}></input>
-                <span>Não</span><input type="radio" name="travelOtCountrys" checked={!this.state.vagaAdicionar.travelOtCountrys} onClick={this.handleRadioChange}></input>
-               
-                <span>Turnos:</span>
-                <span>Sim</span><input type="radio" name="shifts" checked={this.state.vagaAdicionar.shifts} onClick={this.handleRadioChange}></input>
-                <span>Não</span><input type="radio" name="shifts" checked={!this.state.vagaAdicionar.shifts} onClick={this.handleRadioChange}></input>
-
-                <button onClick={this.handleConfirmar}>Confirmar</button>
-                <button onClick={this.handleCancelar}>Cancelar</button>
+                    <button onClick={this.handleConfirmar}>Confirmar</button>
+                    <button onClick={this.handleCancelar}>Cancelar</button>
+                </div>
             </div>
         );
     }
