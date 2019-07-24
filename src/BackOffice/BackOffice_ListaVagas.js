@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import BackOffice_Vaga from './BackOffice_Vaga'
 import axios from 'axios'
 import uuid from 'uuid/v4'
+import Spinner from 'react-bootstrap/Spinner'
 import RemovePopup from './RemovePopup'
 import jwt from 'jsonwebtoken';
 import EditPopup from './EditPopup';
 import AddPopup from './AddPopup';
+import './BackOffice_ListaVagas.css'
 
 class VagasIndex extends Component {
     constructor(props) {
@@ -16,7 +18,8 @@ class VagasIndex extends Component {
             isShowingEditPopup: false,
             vagaToRemove: {},
             vagaToEdit: {},
-            isShowingAddPopup: false
+            isShowingAddPopup: false,
+            isLoadingVagas: true
         }
         this.removerVaga = this.removerVaga.bind(this);
         this.cancelarRemocaoVaga = this.cancelarRemocaoVaga.bind(this);
@@ -55,7 +58,8 @@ class VagasIndex extends Component {
             auxArray.push(vaga);
         }
         this.setState({
-            vagas: auxArray
+            vagas: auxArray,
+            isLoadingVagas: false
         });
     }
     testeToken() {
@@ -229,19 +233,27 @@ class VagasIndex extends Component {
     render() {
         return (
             <div className="BackOffice_ListaVagas">
-                <button onClick={this.handleAddVaga}>Adicionar Vaga</button>
-                {this.state.vagas.map(v =>
-                    <BackOffice_Vaga
-                        area={v.area}
-                        localizacao={v.localizacao}
-                        descricao={this.stringToArray(v.descricao)}
-                        data={v.data}
-                        id={v.id}
-                        uuid={v.uuid}
-                        removerVaga={this.removerVaga}
-                        editarVaga={this.editarVaga}
-                    />
-                )}
+                <button className="BackOffice_ListaVagas-Btn-AdicionarVaga" onClick={this.handleAddVaga}>Adicionar Vaga</button>
+                {
+                    this.state.isLoadingVagas 
+                    ?
+                    <Spinner animation="border" variant="info" className="BackOffice_ListaVagas-Spinner" />
+                    :
+                    <div className="BackOffice_ListaVagas-Container">
+                        {this.state.vagas.map(v =>
+                            <BackOffice_Vaga
+                                area={v.area}
+                                localizacao={v.localizacao}
+                                descricao={this.stringToArray(v.descricao)}
+                                data={v.data}
+                                id={v.id}
+                                uuid={v.uuid}
+                                removerVaga={this.removerVaga}
+                                editarVaga={this.editarVaga}
+                            />
+                        )}
+                    </div>
+                }
                 {
                     this.state.isShowingRemovePopup &&
                     <RemovePopup
