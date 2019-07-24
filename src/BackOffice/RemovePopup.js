@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import './RemovePopup.css'
 
 class RemovePopup extends Component{
     constructor(props){
@@ -15,9 +16,14 @@ class RemovePopup extends Component{
     render(){
         return(
             <div className="RemovePopup">
-                <h1>Tem a certeza que quer remover esta vaga?</h1>
-                <button onClick={this.handleConfirmarRemocao}>Sim</button>
-                <button onClick={this.handleCancelarRemocao}>Não</button>
+                <div className="RemovePopup-Container">
+                    <span className="RemovePopup-Title">Remover Vaga</span>
+                    <span className="RemovePopup-SubTitle">Tem a certeza que quer remover esta vaga?</span>
+                    <div className="RemovePopup-Buttons">
+                        <button className="RemovePopup-Btn-Confirm" onClick={this.handleConfirmarRemocao}>Sim</button>
+                        <button className="RemovePopup-Btn-Cancel" onClick={this.handleCancelarRemocao}>Não</button>
+                    </div>
+                </div>
             </div>
         );
     }
