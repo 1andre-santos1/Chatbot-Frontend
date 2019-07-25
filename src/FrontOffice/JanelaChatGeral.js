@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './JanelaChatGeral.css'
 import axios from 'axios'
+import Spinner from 'react-bootstrap/Spinner'
 
 class JanelaChatGeral extends Component{
     constructor(props){
@@ -9,7 +10,8 @@ class JanelaChatGeral extends Component{
             inicioConversa: null,
             pergunta: '',
             dialog: [],
-            className: 'slide-in-blurred-bottom'
+            className: 'slide-in-blurred-bottom',
+            isProcessing: true
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -21,11 +23,16 @@ class JanelaChatGeral extends Component{
         );
 
         this.setState({
-            inicioConversa: <span className="JanelaChatGeral-Node-Chatbot">{response.data.output.text[0]}</span>
+            inicioConversa: <span className="JanelaChatGeral-Node-Chatbot">{response.data.output.text[0]}</span>,
+            isProcessing: false
         });
     }
     async handleSubmit(evt){
         evt.preventDefault();
+
+        this.setState({
+            isProcessing: true
+        });
 
         if(this.state.pergunta === '')
             return;
@@ -120,7 +127,6 @@ class JanelaChatGeral extends Component{
                         strAux += ', '
                 }
 
-                console.log(watsonResponse)
                 watsonResponse = watsonResponse.replace("{"+apiRequests[i]+"}", strAux);
             }
         }   
@@ -128,7 +134,8 @@ class JanelaChatGeral extends Component{
         this.adicionarMensagem(watsonResponse,"chatbot");
 
         this.setState({
-            pergunta: ''
+            pergunta: '',
+            isProcessing:false
         })
     }
     handleChange(evt){
@@ -166,6 +173,10 @@ class JanelaChatGeral extends Component{
                 {this.state.dialog.map(n => 
                     <span className={n.className}>{n.text}</span>
                 )}
+                {
+                    this.state.isProcessing &&
+                    <span className="JanelaChatGeral-Loading JanelaChatGeral-Node-Chatbot scale-up-center">. . .</span>
+                }
                </div>
                <div className="JanelaChatGeral-Form">
                 <form onSubmit={this.handleSubmit} autoComplete="off">
