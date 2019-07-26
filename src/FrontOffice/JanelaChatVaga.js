@@ -96,6 +96,9 @@ class JanelaChatVaga extends Component{
         }   
         
         watsonResponse = watsonResponse.replace(/\"/g, "")
+
+        if(watsonResponse === '')
+             watsonResponse = "Peço desculpa, neste momento estou a treinar para o conseguir perceber melhor. Tente novamente mais tarde 🙁";
         
         this.adicionarMensagem(watsonResponse,"chatbot");
 

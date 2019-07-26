@@ -143,6 +143,8 @@ class JanelaChatGeral extends Component{
             }
         }   
 
+        if(watsonResponse === '')
+            watsonResponse = "Peço desculpa, não o consegui perceber 🙁";
         this.adicionarMensagem(watsonResponse,"chatbot");
 
         this.setState({
