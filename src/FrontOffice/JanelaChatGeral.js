@@ -85,8 +85,20 @@ class JanelaChatGeral extends Component{
                     }
                 }
 
+                let isNotFound = false;
                 //pedido a localhost:8000/api/jobs/:idLocal/:idArea
-                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com${apiRequests[i]}`);
+                let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com${apiRequests[i]}`).catch(error =>{
+                    watsonResponse = "Não encontrei nenhuma vaga para a área pretendida nesta localização 🙁";
+                    this.adicionarMensagem(watsonResponse,"chatbot");
+
+                    this.setState({
+                        pergunta: '',
+                        isProcessing:false
+                    });
+                    isNotFound = true;
+                });
+                if(isNotFound)
+                    return;
 
                 let values = [];
                 for(let j = 0; j < apiResponse.data.length; j++){
