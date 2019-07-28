@@ -230,9 +230,14 @@ class VagasIndex extends Component {
             isShowingAddPopup: true
         })
     }
+    handleLogout(){
+        window.location = "jobs";
+        sessionStorage.clear();
+    }
     render() {
         return (
             <div className="BackOffice_ListaVagas">
+                <a className="BackOffice_ListaVagas-LinkLogout" onClick={this.handleLogout}>Terminar Sessão</a>
                 <button className="BackOffice_ListaVagas-Btn-AdicionarVaga" onClick={this.handleAddVaga}>Adicionar Vaga</button>
                 {
                     this.state.isLoadingVagas 
@@ -278,7 +283,6 @@ class VagasIndex extends Component {
                         adicionarVagaConfirmed={this.adicionarVagaConfirmed}
                         cancelarAdicaoVaga={this.cancelarEdicaoVaga} />
                 }
-                <h1>{sessionStorage.getItem('token').username}</h1>
             </div>
         );
     }

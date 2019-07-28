@@ -38,7 +38,19 @@
     -webkit-animation: text-focus-in 1s linear infinite alternate-reverse both;
 	        animation: text-focus-in 1s linear infinite alternate-reverse both;
 }
-
+.BackOffice_ListaVagas-LinkLogout{
+  position: absolute;
+    top:8rem;
+    left: 5rem;
+    z-index: 100;
+    padding-bottom:8px;
+    color: white;
+}
+.BackOffice_ListaVagas-LinkLogout:hover{
+  border-bottom:1px solid #17a2b8;
+    padding-bottom:7px;
+    cursor: pointer;
+}
 @-webkit-keyframes text-focus-in {
     0% {
       -webkit-filter: blur(1px);
