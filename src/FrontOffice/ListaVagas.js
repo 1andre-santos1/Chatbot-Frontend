@@ -97,6 +97,10 @@ class ListaVagas extends Component{
             })
         }       
     }
+    handleLogout(){
+        sessionStorage.clear();
+        window.location = "jobs";
+    }
     render(){
         return(
             <div className="ListaVagas">
@@ -106,7 +110,11 @@ class ListaVagas extends Component{
                 </div>
                 {
                     (sessionStorage.getItem('token') != null) &&
-                     <a id="LinkAdminVagas" href="/backOffice/jobs">Administrar Vagas</a>
+                    <div>
+                        <a id="LinkAdminVagas" href="/backOffice/jobs">Administrar Vagas</a>
+                        <a id="LinkLogout" onClick={this.handleLogout}>Terminar Sessão</a>
+                    </div>
+                     
                 }
                 <div id="DropdownMenuContainer">
                     <DropdownAPI nome="Área" list={this.state.areas} filterJobs={this.filterJobs}/>

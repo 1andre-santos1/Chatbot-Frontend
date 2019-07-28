@@ -34,6 +34,19 @@
     border-bottom:1px solid #17a2b8;
     padding-bottom:7px;
 }
+#LinkLogout{
+    position: absolute;
+    top:22rem;
+    left: 20rem;
+    z-index: 100;
+    padding-bottom:8px;
+    color: white;
+}
+#LinkLogout:hover{
+    border-bottom:1px solid #17a2b8;
+    padding-bottom:7px;
+    cursor: pointer;
+}
 #DropdownMenuContainer{
     position: absolute;
     width: 80%;
