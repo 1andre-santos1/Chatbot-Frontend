@@ -56,7 +56,31 @@ class JanelaChatGeral extends Component{
         }
         for(let i = 0; i < apiRequests.length; i++){
             
+            let isNotFound = false;
             if(apiRequests[i].includes(':idLocal/:idArea')){
+                if(response.data.entities[0] == null){
+                    watsonResponse = "Parece que esse local não existe, ou preciso de mais treino para reconhecer a sua pergunta 🙁"
+                    this.adicionarMensagem(watsonResponse,"chatbot");
+
+                    this.setState({
+                        pergunta: '',
+                        isProcessing:false
+                    });
+                    isNotFound = true;
+                }
+                if(response.data.entities[1] == null){
+                    watsonResponse = "Parece que essa área não existe, ou preciso de mais treino para reconhecer a sua pergunta 🙁"
+                    this.adicionarMensagem(watsonResponse,"chatbot");
+
+                    this.setState({
+                        pergunta: '',
+                        isProcessing:false
+                    });
+                    isNotFound = true;
+                }
+                if(isNotFound)
+                    return;
+
                 let localValue = response.data.entities[0].value;
                 let areaValue = response.data.entities[1].value;
 
@@ -85,7 +109,6 @@ class JanelaChatGeral extends Component{
                     }
                 }
 
-                let isNotFound = false;
                 //pedido a localhost:8000/api/jobs/:idLocal/:idArea
                 let apiResponse = await axios.get(`https://asaf-enterprise-chatbot-api.herokuapp.com${apiRequests[i]}`).catch(error =>{
                     watsonResponse = "Não encontrei nenhuma vaga para a área pretendida nesta localização 🙁";
