@@ -58,18 +58,9 @@ class JanelaChatGeral extends Component{
             
             let isNotFound = false;
             if(apiRequests[i].includes(':idLocal/:idArea')){
-                if(response.data.entities[0] == null){
-                    watsonResponse = "Parece que esse local não existe, ou preciso de mais treino para reconhecer a sua pergunta 🙁"
-                    this.adicionarMensagem(watsonResponse,"chatbot");
-
-                    this.setState({
-                        pergunta: '',
-                        isProcessing:false
-                    });
-                    isNotFound = true;
-                }
-                if(response.data.entities[1] == null){
-                    watsonResponse = "Parece que essa área não existe, ou preciso de mais treino para reconhecer a sua pergunta 🙁"
+                
+                if(response.data.entities[0] == null || response.data.entities[1] == null){
+                    watsonResponse = "Parece que essa localização ou a área não existe, ou preciso de mais treino para reconhecer a sua pergunta 🙁"
                     this.adicionarMensagem(watsonResponse,"chatbot");
 
                     this.setState({
@@ -81,8 +72,17 @@ class JanelaChatGeral extends Component{
                 if(isNotFound)
                     return;
 
-                let localValue = response.data.entities[0].value;
-                let areaValue = response.data.entities[1].value;
+                let localValue = '';
+                let areaValue = '';
+                for(let j = 0; j < response.data.entities.length; j++)
+                {
+                    let currentEntity = response.data.entities[j];
+                    let entityName = currentEntity.entity;
+                    if(entityName === 'localização')
+                        localValue = currentEntity.value;
+                    else if(entityName === 'áreas')
+                        areaValue = currentEntity.value;
+                }
 
                 let localResponse = await axios.get('https://asaf-enterprise-chatbot-api.herokuapp.com/api/locations');
                 let localId;
